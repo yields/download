@@ -1,0 +1,18 @@
+{
+  "name": "download",
+  "repo": "yields/download",
+  "description": "Downloads a file with `xhr` report progress and send the file to the user.",
+  "version": "0.0.1",
+  "keywords": ["download", "xhr"],
+  "dependencies": {
+    "component/emitter": "*",
+    "yields/xhr": "*"  
+  },
+  "development": {
+    "component/progress": "*"  
+  },
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>download</title>
+    <script src='../build/build.js'></script>
+    <style>
+      #app {
+        text-align: center;
+        width: 200px;
+        margin: 0 auto;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id='app'>
+      <button>download</button>
+    </div>
+
+    <script>
+    
+      var btn = document.querySelector('button');
+      var download = require('download')('download');
+      var Progress = require('component-progress');
+      var progress = new Progress();
+
+      btn.onclick = function(){
+        btn.setAttribute('disabled', '');
+        download.end(function(err, req){
+          location.pathname = '/download';
+        });
+      };
+
+
+      btn.parentNode.appendChild(progress.el, btn);
+
+      download.on('progress', function(e){
+        console.log('progress %d', e.percent);
+        progress.update(e.percent);
+      });
+
+      progress.size(200);
+      progress.update(0);
+
+    </script>
+  </body>
+</html>
