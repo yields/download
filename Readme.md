@@ -9,6 +9,8 @@
 
 ## Example
 
+You can run the example with `$ make example` and then `$ serve . && open http://localhost:300/`.
+
 ```js
 var Download = require('download')
   , Progress = require('progress');
